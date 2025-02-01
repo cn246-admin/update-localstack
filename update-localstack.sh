@@ -19,7 +19,7 @@ clean_up() {
 bin_dir="$HOME/.local/bin"
 
 if command -v localstack >/dev/null 2>&1; then
-  localstack_installed_version="v$(localstack --version)"
+  localstack_installed_version="v$(localstack --version | cut -d' ' -f3)"
 else
   localstack_installed_version="Not Installed"
 fi
